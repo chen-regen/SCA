@@ -1,9 +1,12 @@
 // Main viewmodel class
-define(['lib/knockout-3.4.0'], function(ko) {
+define(['ko', 'anotherViewModel'], function(ko, anotherViewModel) {
     return function appViewModel() {
         this.inputLetters = ko.observable('try this');
         this.inputCaps = ko.pureComputed(function() {
             return this.inputLetters().toUpperCase();
         }, this);
+        this.redirect = function () {
+            return new anotherViewModel(this.inputCaps);
+        };
     };
 });
