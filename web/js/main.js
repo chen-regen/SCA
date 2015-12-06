@@ -10,6 +10,6 @@ requirejs.config({
 });
 
 require(['ko', 'appViewModel'], function(ko, appViewModel) {
-    ko.applyBindings(new appViewModel());
+    ko.applyBindings(new appViewModel(), $('#indexDiv')[0]);
 });
 

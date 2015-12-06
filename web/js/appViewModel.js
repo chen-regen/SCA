@@ -35,5 +35,23 @@ define(['ko', 'anotherViewModel', 'jquery'], function(ko, anotherViewModel, $) {
 				}
 			});
         };
+        this.redirectAnotherModel = function () {
+            $.ajax({
+				type: 'GET',
+				url: 'anotherModelPage.html', 
+				success: function (data) {
+		        	$('#indexDiv').css('visibility','hidden');
+	                
+		        	if (!$('#anotherModelDiv').length){
+		        		$('body').append(data);
+		        		
+				        //ko.applyBindings(new anotherViewModel(self.model.inputCaps()), $('#anotherModelDiv')[0]);
+		        		ko.applyBindings(new anotherViewModel(self.model), $('#anotherModelDiv')[0]);
+		        	}
+		                
+			        $('#anotherModelDiv').css('visibility','visible');
+				}
+			});
+        };
     };
 });
