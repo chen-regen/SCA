@@ -3,8 +3,11 @@
         <script type="text/javascript" data-main="js/main.js" src="js/lib/require-2.1.22.js"></script>
     </head>
     <body>
+    <div id="indexDiv">
         <p>Input: <input data-bind="value: inputLetters, valueUpdate: 'keyup'" /></p>
         <p>Input capitalized: <strong data-bind="text: inputCaps"></strong></p>
-        <a href="another.html" data-bind="click: redirect">Click to redirect</a> 
+<!--         <a href="another.html" data-bind="click: redirect">Click to redirect</a>  -->
+      	<a data-bind="click: redirect" type="submit" href="">Click to redirect</a>
+      </div>
     </body>
 </html>
